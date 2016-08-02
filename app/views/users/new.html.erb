@@ -1,0 +1,25 @@
+<center><h1 style="color: #FF2542; font-size: 3em">Registro!</h1>
+
+  
+  <%= form_for @user, action: "create" do |f| %>
+
+              
+    <%= f.text_field :user_name,   placeholder: "Usuario", class: "form-user", value: session[:user_name] %>
+    <br><br>
+    <%= f.email_field :mail, placeholder: "Mail", class: "form-user", value: session[:email]  %>
+    <br><br>
+    <%= f.password_field :password, placeholder: "Password", class: "form-user" , value: session[:password] %>
+    <br><br>
+    <% if logged_in? %>
+      <%= f.submit "Edita", class: "button_submit" %>
+    <% else %>
+      <%= f.submit "Crear", class: "button_submit" %>
+    <% end %>
+    <br>
+
+  <% end %>
+  <br><br>
+  <%= button_to "Salir!", {controller: "users", action: "index"}, method: "get", class: "button_submit" %>
+
+
+</center>

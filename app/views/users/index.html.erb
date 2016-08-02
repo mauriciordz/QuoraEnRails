@@ -1,0 +1,30 @@
+<center><h1 style="color: #FF2542; font-size: 3em">Bienvenido a Fake Quora!</h1>
+
+  <% if logged_in? %>
+    <h3 style="color:blue">You are logged in <%=session[:user_name]%></h3>
+
+  <% else %>
+    <h3 style="color:red"><%=flash[:error_message]%></h3>
+  <% end %>
+
+  <h3 style="color:red"><%=flash[:edit_message]%></h3>
+  <h3 style="color:red"><%=flash[:create_message]%></h3>
+
+
+  <br>
+  <% if logged_in? %>
+    <%= button_to "Edit User!", { controller: "users", action: "new"}, class: "button_submit", method: "get" %>
+    <br>
+    <%= button_to "Quora!", { controller: "questions", action: "menu"}, class: "button_submit", method: "get" %>
+    <br>
+    <%= button_to "Logout!", { controller: "users", action: "logout"}, class: "button_submit", method: "get" %>
+    <br>
+  <% else %>
+    <%= button_to "Registrar!", { controller: "users", action: "new"}, class: "button_submit",  method: "get" %>
+    <br>
+    <%= button_to "Login!", { controller: "users", action: "login"}, class: "button_submit", method: "get" %>
+    <br>
+    
+  <% end %>
+
+</center>

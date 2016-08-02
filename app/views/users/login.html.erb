@@ -1,0 +1,19 @@
+<center><h1 style="color: #FF2542; font-size: 3em">Login!</h1>
+
+  
+  <%= form_tag("/users/access", method: "post")  do  %>     
+
+    <%= email_field_tag :mail, nil,  placeholder: "Mail", class: "form-user"%>
+    <br><br>
+    <%= password_field :password , nil , placeholder: "Password", class: "form-user" %>
+    <br><br>
+    <%= submit_tag "Login!", class: "button_submit" %>
+    <br>
+
+  <% end %>
+  <br>
+  <br>
+  <%= button_to "Salir!", {controller: "users", action: "index"}, method: "get", class: "button_submit" %>
+
+
+</center>

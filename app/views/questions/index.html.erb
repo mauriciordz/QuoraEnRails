@@ -1,0 +1,17 @@
+<center><h1 style="color: #FF2542; font-size: 3em">Bienvenido a Fake Quora!</h1>
+
+    <p id>
+    <% @questions.each do |question| %>
+      <%=link_to question.question, answer_path(question.id), class: "links" %><br><br>
+    <%end%>
+    </p>
+    <br><br><br>
+  
+
+
+    <%= button_to "Create Question!", new_question_path, class: "button_submit", method: "get" %>
+    <br>
+
+    <%= button_to "Return!", {controller: "users", action: "index"}, class: "button_submit", method: "get" %>
+
+</center>

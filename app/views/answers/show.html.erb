@@ -1,0 +1,19 @@
+<center><h1 style="color: #FF2542; font-size: 3em">Bienvenido a Fake Quora!</h1>
+
+  <p><%= @questions.question %></p>
+  
+   <% @answers.each do |answer| %>   
+      <span>* <%= answer.answer%> </span><br>
+      <%=link_to "Me gusta " + answer.vote_like.to_s, controller: "answers", action: "megusta", id: answer.id, class: "links" %>
+      <%=link_to "Me disgusta " + answer.vote_dislike.to_s, controller: "answers", action: "medisgusta", id: answer.id, class: "links" %>
+      <br>
+      <br>
+  <%end%>
+
+
+    <%= button_to "Create Answer!", questions_path, class: "button_submit", method: "get" %>
+    <br>
+
+    <%= button_to "Salir!", {controller: "users", action: "index"}, class: "button_submit", method: "get" %>
+
+</center>

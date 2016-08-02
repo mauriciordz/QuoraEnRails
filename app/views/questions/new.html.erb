@@ -1,0 +1,20 @@
+<center><h1 style="color: #FF2542; font-size: 3em">Registro!</h1>
+
+  
+  <%= form_for @question, action: "create" do |f| %>
+
+              
+    <%= f.text_field :question,   placeholder: "NewQuestion", class: "form-user" %>
+    <br><br>
+ 
+ 
+      <%= f.submit "New Question", class: "button_submit" %>
+
+    <br>
+
+  <% end %>
+  <br><br>
+  <%= button_to "Salir!", {controller: "users", action: "index"}, method: "get", class: "button_submit" %>
+
+
+</center>
